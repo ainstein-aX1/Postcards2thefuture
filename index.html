@@ -4,92 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Postcards 2 The Future</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img src="image/logo.png" alt="Postcards 2 The Future" class="logo">
+        <img src="image/logo.png" alt="Postcards 2 The Future" width="1426" height="300">
+        <nav>
+            <ul>
+                <li><a href="hakkinda.html">Proje Hakkında</a></li>
+                <li><a href="about.html">About Project</a></li>
+                <li><a href="https://www.instagram.com/postcards2thefuture/ "target="_blank">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/in/burcuayan/ "target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/ainstein-aX1" target="_blank">GitHub</a></li>
+                <li><a href="mailto:send@postcards2thefuture.xyz">Contact Me</a></li>
+            </ul>
+        </nav>
+        <p>Send your message to the future with this unique AI images.</p>
     </header>
-    
     <main>
         <section class="gallery">
-            <div class="grid-container">
-                <div class="grid-item" onclick="openPopup('postcard1.jpg')"> <!-- Replace 'postcard1.jpg' with your actual image source -->
-                    <img src="gallery/postcard1.jpg" alt="Postcard Image 1">
-                </div>
-                <div class="grid-item" onclick="openPopup('postcard2.jpg')"> <!-- Replace 'postcard2.jpg' with your actual image source -->
-                    <img src="gallery/postcard2.jpg" alt="Postcard Image 2">
-                </div>
-                <div class="grid-item" onclick="openPopup('postcard3.jpg')"> <!-- Replace 'postcard3.jpg' with your actual image source -->
-                    <img src="gallery/postcard3.jpg" alt="Postcard Image 3">
-                </div>
-                <div class="grid-item" onclick="openPopup('postcard4.jpg')"> <!-- Replace 'postcard4.jpg' with your actual image source -->
-                    <img src="gallery/postcard4.jpg" alt="Postcard Image 4">
-                </div>
-
-                <div class="grid-item" onclick="openPopup('postcard5.jpg')"> <!-- Replace 'postcard5.jpg' with your actual image source -->
-                    <img src="gallery/postcard5.jpg" alt="Postcard Image 5">
-                </div>
-                <div class="grid-item" onclick="openPopup('postcard6.jpg')"> <!-- Replace 'postcard6.jpg' with your actual image source -->
-                    <img src="gallery/postcard6.jpg" alt="Postcard Image 6">
-                </div>
-                <div class="grid-item" onclick="openPopup('postcard7.jpg')"> <!-- Replace 'postcard7.jpg' with your actual image source -->
-                    <img src="gallery/postcard7.jpg" alt="Postcard Image 7">
-                </div>
-                <div class="grid-item" onclick="openPopup('postcard8.jpg')"> <!-- Replace 'postcard8.jpg' with your actual image source -->
-                    <img src="gallery/postcard8.jpg" alt="Postcard Image 8">
-                </div>
-                <!-- Add more grid items as needed -->
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <img src="image/footer.png" alt="Postcards 2 The Future" class="logo">
-        <a href="#" onclick="openContactPopup()">Contact us</a>
-        <style>text-align: center;
-            margin-top: 20px;
-            margin-bottom: 20px;</style>
+            <section class="gallery">
+                <img src="gallery/postcard1.jpg" alt="Image 1" width="340" height="233">
+                <img src="gallery/postcard2.jpg" alt="Image 2" width="340" height="233">
+                <img src="gallery/postcard3.jpg" alt="Image 1" width="340" height="233">
+                <img src="gallery/postcard4.jpg" alt="Image 2" width="340" height="233">    
+                <img src="gallery/postcard5.jpg" alt="Image 1" width="340" height="233">
+                <img src="gallery/postcard6.jpg" alt="Image 2" width="340" height="233">
+                <img src="gallery/postcard7.jpg" alt="Image 1" width="340" height="233">
+                <img src="gallery/postcard8.jpg" alt="Image 2" width="340" height="233">
+                <!-- Add the rest of the images similarly -->
+            </section>
             
+            <!-- Gallery images will be dynamically inserted here -->
+        </section>
+        <p></p>
+    </main>
+    <footer>
+        <div class="footer-image">
+            <img src="image/footer.png" alt="" width="1426" height="300">
+        </div>
+        <p></p>
         
+        <div class="footer-content">
+            <div class="left-row">
+                <p>Thank you for visiting. | This website is coded by ChatGPT 3.5</p>
+            </div>
+            <div class="right-row">
+                <p>All images generated by Leonardo.ai and Stable Diffusion | Copyright 2024</p>
+            </div>
+        </div>
     </footer>
 
+    <!-- Pop-up contact form -->
     <div id="popup" class="popup">
         <div class="popup-content">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <h2>Send a Message</h2>
-            <form id="messageForm" onsubmit="submitForm(event)">
-                <label for="fullName">Full Name:</label>
-                <input type="text" id="fullName" required>
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" required>
-                <label for="recipientEmail">Recipient's Email:</label>
-                <input type="email" id="recipientEmail" required>
-                <label for="capsuledTime">Capsuled Time:</label>
-                <input type="datetime-local" id="capsuledTime" required>
-                <label for="message">Message:</label>
-                <textarea id="message" maxlength="200" required></textarea>
+            <span class="close">&times;</span>
+            <h2>Send a Postcard</h2>
+            <form id="postcard-form">
+                <input type="text" name="fullname" placeholder="Full Name" required><br>
+                <input type="text" name="subject" placeholder="Subject" required><br>
+                <input type="email" name="email" placeholder="Your Email" required><br>
+                <input type="email" name="recipient_email" placeholder="Recipient's Email" required><br>
+                <input type="date" name="encapsulated_time" required><br>
+                <textarea name="message" placeholder="Message" maxlength="200" required></textarea><br>
                 <button type="submit">Send</button>
             </form>
+            <p class="popup-message"></p>
         </div>
+        
     </div>
 
-    <div id="contactPopup" class="popup">
-        <div class="popup-content">
-            <span class="close" onclick="closeContactPopup()">&times;</span>
-            <h2>Contact Us</h2>
-            <form id="contactForm" onsubmit="submitContactForm(event)">
-                <label for="contactFullName">Full Name:</label>
-                <input type="text" id="contactFullName" required>
-                <label for="contactSubject">Subject:</label>
-                <input type="text" id="contactSubject" required>
-                <label for="contactMessage">Message:</label>
-                <textarea id="contactMessage" maxlength="200" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </div>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
